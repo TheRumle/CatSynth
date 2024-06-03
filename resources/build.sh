@@ -1,0 +1,1 @@
+﻿dotnet publish ./Cat-Synth/ --output .\resources\catsynth --runtime linux-x64 --self-contained true /p:gcAllowVeryLargeObjects=true

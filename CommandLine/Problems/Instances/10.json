@@ -1,0 +1,6 @@
+﻿{
+  "sequence": ["p1","p1","p1","p1"],
+  "every": 6,
+  "batchSize": 1,
+  "inputMachine": "h"
+}

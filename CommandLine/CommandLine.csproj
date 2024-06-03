@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <RootNamespace>CommandLineApp</RootNamespace>
+        <PublishSingleFile>true</PublishSingleFile>
+    </PropertyGroup>
+
+
+
+    <ItemGroup>
+        <PackageReference Include="Cocona" Version="2.2.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Adaption\Adaption.csproj" />
+        <ProjectReference Include="..\Experiments\Experiments.csproj" />
+        <ProjectReference Include="..\Input\Input.csproj" />
+        <ProjectReference Include="..\Synthesis\Synthesis.csproj" />
+        <ProjectReference Include="..\Verification\Verification.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Update="Problems\Instances\**">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="Problems\Systems\**">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+</Project>

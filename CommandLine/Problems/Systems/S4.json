@@ -1,0 +1,34 @@
+﻿{
+  "Name": "four-machines",
+  "machines": [
+    {"name": "h", "state": "active", "capacity": 8, "req": [1]},
+    {"name": "c", "state": "off", "capacity": 4, "req": [1,2,4]},
+    {"name": "b", "state": "off", "capacity": 1, "req": [1]},
+    {"name": "a", "state": "off", "capacity": 1, "req": [1]}
+  ],
+  "arms": [
+    {"name": "arm_one", "capacity": 1, "reach": ["h", "a", "e"], "time": 1},
+    {"name": "arm_two", "capacity": 1, "reach": ["a", "b", "e"], "time": 1},
+    {"name": "arm_three", "capacity": 1, "reach": ["b", "c", "e"], "time": 1},
+    {"name": "arm_four", "capacity": 1, "reach": ["c", "a", "e"], "time": 1}
+  ],
+  "exits": ["e"],
+  "crit": [
+    {"product":"p1","start":  1, "end":  3, "time": 55},
+    {"product":"p2","start":  2, "end":  4, "time": 40}
+  ],
+  "protocol": {
+    "p1":  [
+    {"machine":  "h", "minTime":3,  "maxTime": 8},
+    {"machine":  "c", "minTime": 1, "maxTime": 2},
+    {"machine":  "a", "minTime": 1, "maxTime": 3}, 
+      {"machine":  "c", "minTime": 2, "maxTime": 5}
+    ],
+    "p2":  [
+      {"machine":  "h", "minTime":3,  "maxTime": 8},
+      {"machine":  "c", "minTime": 1, "maxTime": 2},
+      {"machine":  "b", "minTime": 4, "maxTime": 5},
+      {"machine":  "c", "minTime": 1, "maxTime": 2}
+    ]
+  }
+}

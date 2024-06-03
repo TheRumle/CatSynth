@@ -1,0 +1,24 @@
+﻿{
+  "Name": "Three machines",
+  "machines": [
+    {"name": "h", "state": "active", "capacity": 50, "req": [1]},
+    {"name": "c", "state": "off", "capacity": 4, "req": [2,3,4]},
+    {"name": "d", "state": "off", "capacity": 1, "req": [1]}
+  ],
+  "arms": [{"name": "arm", "capacity": 1, "reach": ["h", "c", "e", "d"], "time": 1}],
+  "exits": ["e"],
+  "crit": [{"product":"p1","start":  0, "end":  1, "time": 20}, {"product":"p2","start":  1, "end":  2, "time": 20}],
+  "protocol": {
+    
+    "p1":  [
+      {"machine":"h", "minTime":  1, "maxTime": 10},
+      {"machine":  "d", "minTime": 6, "maxTime": 7},
+      {"machine":  "c", "minTime": 3, "maxTime": 4}
+    ],
+    "p2":  [
+      {"machine":"h", "minTime":  1, "maxTime": 34},
+      {"machine":  "c", "minTime": 3, "maxTime": 4},
+      {"machine":  "d", "minTime": 6, "maxTime": 7}
+    ]
+  }
+}

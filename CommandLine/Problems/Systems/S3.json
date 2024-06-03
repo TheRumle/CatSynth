@@ -1,0 +1,31 @@
+﻿{
+  "Name": "four-machines",
+  "machines": [
+    {"name": "h", "state": "active", "capacity": 20, "req": [1]},
+    {"name": "centrifuge", "state": "off", "capacity": 4, "req": [1,2,4]},
+    {"name": "dispenser", "state": "off", "capacity": 1, "req": [1]},
+    {"name": "mixer", "state": "active", "capacity": 1, "req": [1]}
+  ],
+  "arms": [
+    {"name": "arm_one", "capacity": 1, "reach": ["h", "centrifuge", "dispenser"], "time": 1},
+    {"name": "arm_two", "capacity": 1, "reach": ["mixer", "dispenser", "e"], "time": 1}],
+  "exits": ["e"],
+  "crit": [
+    {"product":"p1","start":  0, "end":  3, "time": 20},
+    {"product":"p2","start":  0, "end":  1, "time": 17}
+  ],
+  "protocol": {
+    "p1":  [
+    {"machine":  "h", "minTime":3,  "maxTime": 34},
+    {"machine":  "centrifuge", "minTime": 1, "maxTime": 2},
+    {"machine":  "dispenser", "minTime": 1, "maxTime": 1},
+    {"machine":  "mixer", "minTime": 1, "maxTime": 2}
+  ],
+    "p2":  [
+      {"machine":  "h", "minTime":1,  "maxTime": 34},
+      {"machine":  "centrifuge", "minTime": 1, "maxTime": 2},
+      {"machine":  "dispenser", "minTime": 1, "maxTime": 2},
+      {"machine":  "mixer", "minTime": 1, "maxTime": 2}
+    ]
+  }
+}
